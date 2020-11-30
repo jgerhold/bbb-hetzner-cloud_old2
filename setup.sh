@@ -85,7 +85,7 @@ chmod +x /usr/local/bin/spDYN_update.sh
 
 /usr/local/bin/spDYN_update.sh ${TURNDOMAIN} ${SPDNSTOKEN4} ${SPDNSTOKEN6}
 
-wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -c ${TURNDOMAINSECRET} -e ${EMAIL} -l
+wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -c ${TURNDOMAINSECRET} -e ${EMAIL}
 else
 curl -o /usr/local/bin/update-config.sh https://raw.githubusercontent.com/jgerhold/bbb-hetzner-cloud/main/update-config.sh
 
