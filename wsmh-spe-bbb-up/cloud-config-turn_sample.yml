@@ -1,0 +1,18 @@
+#cloud-config
+
+# bootcmd:
+  # - curl -s https://raw.githubusercontent.com/jgerhold/bbb-hetzner-cloud/main/setup.sh | bash -s -- --hcloud-token fxb07bzSaJ4IW5YJLWn6rXlS25W3kgPMRtZilrpghvrnPdcuANuEPjHJofM9pPiT --domain bbb.wsmh-spe.gerhold-service.de --email wsmh-spe-bbb@gerhold-service.de --admin-name "Joel Gerhold" --admin-email "joel@gmx.de" --admin-password "Zp2QEVykhw6pEYLKC4UiBQev" --floating-ips
+  # - "wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -g -v xenial-22 -s bbb.wsmh-spe.gerhold-service.de -e wsmh-spe-bbb@gerhold-service.de"
+  # - echo 192.168.1.130 us.archive.ubuntu.com >> /etc/hosts
+  # - [ cloud-init-per, once, mymkfs, mkfs, /dev/vdb ]
+
+runcmd:
+  - curl -s https://raw.githubusercontent.com/jgerhold/bbb-hetzner-cloud/main/setup-turn.sh | bash -s -- --hcloud-token <token> --domain <domain> --email <email> --admin-name "<adminname>" --admin-email "<adminemail>" --admin-password "<admin-password>" --floating-ips >>setup.log 2>&1
+#  - [ ls, -l, / ]
+#  - [ sh, -xc, "echo $(date) ': hello world!'" ]
+#  - [ sh, -c, echo "=========hello world'=========" ]
+#  - ls -l /root
+#  # Note: Don't write files to /tmp from cloud-init use /run/somedir instead.
+#  # Early boot environments can race systemd-tmpfiles-clean LP: #1707222.
+#  - "mkdir /run/mydir"
+#  - [ wget, "http://slashdot.org", -O, /run/mydir/index.html ]
