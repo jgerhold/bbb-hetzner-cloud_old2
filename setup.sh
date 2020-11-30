@@ -80,7 +80,7 @@ chmod +x jq-linux64
 mv jq-linux64 /usr/local/bin/jq
 
 if [ "$TURNDOMAIN" != "0" ]; then
-curl -o /usr/local/bin/bbb-config.sh https://raw.githubusercontent.com/jgerhold/bbb-hetzner-cloud/main/spDYN_update.sh
+curl -o /usr/local/bin/spDYN_update.sh https://raw.githubusercontent.com/jgerhold/bbb-hetzner-cloud/main/spDYN_update.sh
 chmod +x /usr/local/bin/spDYN_update.sh
 
 /usr/local/bin/spDYN_update.sh ${TURNDOMAIN} ${SPDNSTOKEN4} ${SPDNSTOKEN6}
